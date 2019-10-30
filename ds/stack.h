@@ -22,7 +22,7 @@ public:
     }
     ~SeqStack()
     {
-        if (data != nullptr) delete[] data;
+        if (data != nullptr) delete[] data; data = nullptr;
     }
 
     T getTop()

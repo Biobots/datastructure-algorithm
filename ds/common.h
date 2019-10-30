@@ -8,4 +8,6 @@
 typedef unsigned int size_t;
 #endif
 
+typedef unsigned int uint;
+
 #endif
