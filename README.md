@@ -1,2 +1,9 @@
 # ds-algo
-data structure &amp; algorithm
+
+## 数据结构
+
+1. 顺序栈
+
+2. 循环队列
+
+3. 二叉树
