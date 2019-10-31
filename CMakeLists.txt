@@ -11,5 +11,10 @@ add_executable(btree test/btreetest.cpp)
 
 SET(CMAKE_INSTALL_PREFIX .)
 
+enable_testing()
+ADD_TEST(NAME QueueTests COMMAND queue -s)
+ADD_TEST(NAME StackTests COMMAND stack -s)
+ADD_TEST(NAME BinaryTreeTests COMMAND btree -s)
+
 install(TARGETS queue stack btree
         RUNTIME DESTINATION bin)
