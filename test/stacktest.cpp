@@ -1,14 +1,16 @@
-#include <iostream>
-
 #include <stack.h>
+#include <test.h>
 
-int main()
+TEST_CASE("stack function test", "[SeqStack]")
 {
     SeqStack<int> stack(20);
+
+    REQUIRE(stack.isEmpty() == true);
+
     stack.push(10);
     stack.push(23);
     stack.push(9);
-    std::cout << stack.pop() << std::endl;
-    std::cout << stack.getTop() << std::endl;
-    return 0;
+
+    REQUIRE(stack.pop() == 9);
+    REQUIRE(stack.getTop() == 23);
 }
