@@ -50,4 +50,52 @@ public:
     }
 };
 
+#include <stack.h>
+template <typename T>
+class StackQueue // TODO: Exception
+{
+private:
+    SeqStack<T> inStack;
+    SeqStack<T> outStack;
+public:
+    StackQueue()
+    {
+
+    }
+    ~StackQueue()
+    {
+
+    }
+    void enqueue(T val)
+    {
+        inStack.push(val);
+    }
+    T dequeue()
+    {
+        if (outStack.isEmpty())
+        {
+            while (!inStack.isEmpty())
+            {
+                outStack.push(inStack.pop());
+            }
+        }
+        return outStack.pop();
+    }
+    bool isEmpty()
+    {
+        return outStack.isEmpty() && inStack.isEmpty();
+    }
+    T getFront()
+    {
+        if (outStack.isEmpty())
+        {
+            while (!inStack.isEmpty())
+            {
+                outStack.push(inStack.pop());
+            }
+        }
+        return outStack.getTop();
+    }
+};
+
 #endif

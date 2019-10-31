@@ -10,4 +10,6 @@ typedef unsigned int size_t;
 
 typedef unsigned int uint;
 
+#define INDEX_ERROR -1
+
 #endif
