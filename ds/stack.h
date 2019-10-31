@@ -3,7 +3,7 @@
 
 #include <common.h>
 
-#define SEQSTACKMAXSIZE 50
+#define SEQSTACKMAXSIZE 500
 
 template <typename T>
 class SeqStack
@@ -19,6 +19,12 @@ public:
         data = new T[stackSize];
         top = -1;
         size = stackSize;
+    }
+    SeqStack()
+    {
+        data = new T[SEQSTACKMAXSIZE];
+        top = -1;
+        size = SEQSTACKMAXSIZE;
     }
     ~SeqStack()
     {
