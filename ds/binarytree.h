@@ -196,10 +196,14 @@ public:
 	{
 		if (data != nullptr) delete[] data; data = nullptr;
 	}
-	void setValue(T val, size_t index)
+	void setValue(size_t index, T val)
 	{
 		data[index] = val;
 	}
+    T getValue(size_t index)
+    {
+        return data[index];
+    }
 	size_t getSize()
 	{
 		return size;
@@ -228,6 +232,32 @@ public:
 		}
 		return head;
 	}
+    BTNode<T>* turnLinkedList(T skipFlag) // ensure connection
+    {
+        if (data[0] == skipFlag) return nullptr;
+        BTNode<T>* head = new BTNode<T>();
+		SeqQueue<BTNode<T>*> nodes(size);
+		nodes.enqueue(head);
+        for (size_t i = 0; i < size; i++)
+        {
+            if (data[i] == skipFlag) continue;
+            BTNode<T>* ptr = nodes.dequeue();
+			ptr->data = data[i];
+            if (2 * i + 1 <= size - 1 && data[2 * i + 1] != skipFlag)
+            {
+                BTNode<T>* left = new BTNode<T>();
+				ptr->left = left;
+				nodes.enqueue(left);
+            }
+            if (2 * i + 2 <= size - 1 && data[2 * i + 2] != skipFlag)
+			{
+				BTNode<T>* right = new BTNode<T>();
+				ptr->right = right;
+				nodes.enqueue(right);
+			}
+        }
+        return head;
+    }
 };
 
 template <typename T>

@@ -17,6 +17,31 @@ TEST_CASE("binarytree test", "[SeqBTree]")
         REQUIRE(size == pow(2, 5) - 1);
         REQUIRE(tr->left->left->data == 3);
     }
+
+    SECTION("normal binarytree")
+    {
+        SeqBTree<int>* treeb = new SeqBTree<int>(4);
+        treeb->setValue(0, 1);
+        treeb->setValue(1, 1);
+        treeb->setValue(2, 1);
+        treeb->setValue(3, 0);
+        treeb->setValue(4, 2);
+        treeb->setValue(5, 0);
+        treeb->setValue(6, 1);
+        treeb->setValue(7, 0);
+        treeb->setValue(8, 0);
+        treeb->setValue(9, 0);
+        treeb->setValue(10, 0);
+        treeb->setValue(11, 0);
+        treeb->setValue(12, 0);
+        treeb->setValue(13, 3);
+        treeb->setValue(14, 0);
+        REQUIRE(treeb->getValue(2) == 1);
+        BTNode<int>* trb = treeb->turnLinkedList(0);
+        REQUIRE(trb->left->right->data == 2);
+        REQUIRE(trb->right->left == nullptr);
+        REQUIRE(trb->right->right->left->data == 3);
+    }
     
     SECTION("traverse DLR")
     {
