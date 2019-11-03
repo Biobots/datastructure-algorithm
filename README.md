@@ -1,6 +1,6 @@
 # ds-algo
 
-[![Build Status](https://travis-ci.com/Biobots/ds-algo.svg?branch=master)](https://travis-ci.com/Biobots/ds-algo)
+[![Build Status](https://travis-ci.com/Biobots/datastructure-algorithm.svg?branch=master)](https://travis-ci.com/Biobots/datastructure-algorithm)
 
 > use [Catch2](https://github.com/catchorg/Catch2 "Catch2") as test framework. 
 
