@@ -3,6 +3,8 @@
 
 #include <common.h>
 
+#define MIN_EXPAND_SIZE 10
+
 template <typename T>
 struct ArrayNode
 {
@@ -24,6 +26,7 @@ struct ArrayNode
 	~ArrayNode()
 	{
 		if (data != nullptr) delete[] data; data = nullptr;
+        next = nullptr;
 	}
 };
 
@@ -46,7 +49,7 @@ private:
 		{
 			U* cur = ptr;
 			ptr = ptr->next;
-			delete[] cur;
+			delete cur;
 			cur = nullptr;
 		}
 	}
@@ -77,7 +80,10 @@ public:
 	}
 	T& operator[](size_t i) // return reference
 	{
-		if (head == nullptr) return nullptr;
+		if (head == nullptr)
+        {
+            head = new U(MIN_EXPAND_SIZE);
+        }
 		size_t high = head->size;
 		size_t low = 0;
 		U* ptr = head;
@@ -87,7 +93,12 @@ public:
 			ptr = ptr->next;
 			high += ptr->size;
 		}
-		if (i >= high) return nullptr;
+		if (i >= high) // auto expand according to index?
+        {
+            U* tmp = new U((i - high) >= MIN_EXPAND_SIZE ? (i - high + 1) : MIN_EXPAND_SIZE);
+            ptr->next = tmp;
+            return tmp->data[i - high];
+        }
 		return ptr->data[i - low];
 	}
 };
