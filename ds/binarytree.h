@@ -286,4 +286,52 @@ public:
 
 };
 
+template <typename T>
+class TreeNode
+{
+public:
+    T data;
+    TreeNode<T>* child;
+    TreeNode<T>* next;
+    TreeNode()
+    {
+        child = nullptr;
+        next = nullptr;
+    }
+    TreeNode(T val)
+    {
+        data = val;
+        child = nullptr;
+        next = nullptr;
+    }
+    BTNode<T>* turnBinaryTree()
+    {
+        //TODO
+        return nullptr;
+    }
+};
+
+template <typename T>
+class Forest
+{
+private:
+    TreeNode<T>* trees;
+    size_t size;
+public:
+    Forest(size_t inputSize)
+    {
+        size = inputSize;
+        trees = new TreeNode<T>[size];
+    }
+    ~Forest()
+    {
+        if (trees != nullptr) delete[] trees; trees = nullptr;
+    }
+    BTNode<T>* turnBinaryTree()
+    {
+        //TODO
+        return nullptr;
+    }
+};
+
 #endif // !BINARY_TREE_H

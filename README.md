@@ -1,15 +1,34 @@
-# ds-algo
+# DataStructure-Algorithm
 
 [![Build Status](https://travis-ci.com/Biobots/datastructure-algorithm.svg?branch=master)](https://travis-ci.com/Biobots/datastructure-algorithm)
 
-> use [Catch2](https://github.com/catchorg/Catch2 "Catch2") as test framework. 
+> use [Catch2](https://github.com/catchorg/Catch2 "Catch2") as test framework.
 
-## 数据结构
+## Data Structures
 
-1. 顺序栈
+- [x] Queue
+- [x] Stack
+- [x] Binary Tree
+- [ ] Forest
+- [ ] Tree
+- [x] Graph
 
-2. 循环队列
+- [ ] Dynamic Array
 
-3. 二叉树
+## Algorithms
 
-4. 图（邻接矩阵/邻接表）
+### Tree
+
+- [x] Binary Tree: Sequential to linked list
+- [ ] Forest to Binary Tree
+
+### Sort
+
+- [x] Quick Sort
+
+## LeetCode
+
+- [x] 1. Two Sum
+- [x] 2. Add Two Numbers
+- [x] 3. Longest Substring withour Repeating Characters
+- [ ] 4. Median of Two Sorted Arrays
