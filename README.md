@@ -1,6 +1,6 @@
 # DataStructure-Algorithm
 
-[![Build Status](https://travis-ci.com/Biobots/datastructure-algorithm.svg?branch=master)](https://travis-ci.com/Biobots/datastructure-algorithm)
+[![Build Status](https://travis-ci.com/Biobots/datastructure-algorithm.svg?branch=master)](https://travis-ci.com/Biobots/datastructure-algorithm) [![Github Action](https://github.com/Biobots/datastructure-algorithm/workflows/Build%20All/badge.svg)](https://github.com/Biobots/datastructure-algorithm/actions)
 
 > use [Catch2](https://github.com/catchorg/Catch2 "Catch2") as test framework.
 
