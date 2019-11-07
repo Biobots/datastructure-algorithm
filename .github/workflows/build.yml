@@ -1,0 +1,24 @@
+name: Build All
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
+      - name: configure
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+      - name: build
+        run: cmake --build .
+      - name: test
+        run: ctest --verbose
+      - name: install
+        run: make install
+
