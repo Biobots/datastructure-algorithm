@@ -16,6 +16,7 @@ jobs:
           cd build
           cmake ..
       - name: build
+<<<<<<< HEAD
         run: |
           cd build
           cmake --build .
@@ -27,4 +28,11 @@ jobs:
         run: |
           cd build
           make install
+=======
+        run: cmake --build .
+      - name: test
+        run: ctest --verbose
+      - name: install
+        run: make install
+>>>>>>> afa91044e3d540f470c97780c01ac37d1f2682b6
 
