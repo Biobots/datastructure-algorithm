@@ -33,5 +33,5 @@
 - [x] 3. [Longest Substring withour Repeating Characters](leetcode/3.longest-substring-without-repeating-characters.cpp)
 - [x] 4. [Median of Two Sorted Arrays](leetcode/4.median-of-two-sorted-arrays.cpp)
 - [x] 5. [Longest Palindromic Substring](leetcode/5.longest-palindromic-substring.cpp)
-- [ ] 6. ZigZag Conversion
+- [x] 6. [ZigZag Conversion](leetcode/6.zigzag-conversion.cpp)
 - [ ] 7. Reverse Integer
