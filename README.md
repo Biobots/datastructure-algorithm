@@ -34,4 +34,7 @@
 - [x] 4. [Median of Two Sorted Arrays](leetcode/4.median-of-two-sorted-arrays.cpp)
 - [x] 5. [Longest Palindromic Substring](leetcode/5.longest-palindromic-substring.cpp)
 - [x] 6. [ZigZag Conversion](leetcode/6.zigzag-conversion.cpp)
-- [ ] 7. Reverse Integer
+- [x] 7. [Reverse Integer](leetcode/7.reverse-integer.cpp)
+- [x] 8. [atoi](leetcode/8.atoi.cpp)
+- [ ] 9. [Palindrome Number](leetcode/9.palindrome-number.cpp)
+- [ ] 10. [Regular Expression Matching](leetcode/10.regular-expression-matching.cpp)
