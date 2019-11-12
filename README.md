@@ -6,15 +6,12 @@
 
 ## Data Structures
 
-### Basic
-
 - [x] [Queue](ds/queue.h)
 - [x] [Stack](ds/stack.h)
 - [x] [Binary Tree](ds/binarytree.h)
 - [ ] [Forest](ds/binarytree.h)
 - [ ] [Tree](ds/binarytree.h)
 - [x] [Graph](ds/graph.h)
-
 - [ ] [Dynamic Array](ds/dynamicarray.h)
 
 ## Algorithms
@@ -22,6 +19,7 @@
 ### [Tree](ds/binarytree.h)
 
 - [x] Binary Tree: Sequential to linked list
+- [x] Tree to Binary Tree
 - [ ] Forest to Binary Tree
 
 ### [Sort](algo/sort.h)

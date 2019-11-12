@@ -304,20 +304,53 @@ public:
         child = nullptr;
         next = nullptr;
     }
-    BTNode<T>* turnBinaryTree()
+    ~TreeNode()
     {
-        //TODO
-        return nullptr;
+
+    }
+    static BTNode<T>* turnBinaryTree(TreeNode<T>* node)
+    {
+        SeqQueue<TreeNode<T>*> qtree(100);
+        SeqQueue<BTNode<T>*> qbinary(100);
+        TreeNode<T>* ptr;
+        BTNode<T>* head = new BTNode<T>(node->data);
+        BTNode<T>* pre = head;
+        BTNode<T>* cur;
+        qtree.enqueue(node);
+        qbinary.enqueue(head);
+        while(!qtree.isEmpty())
+        {
+            ptr = qtree.dequeue();
+            pre = qbinary.dequeue();
+            if (ptr->child != nullptr)
+            {
+                ptr = ptr->child;
+                cur = new BTNode<T>(ptr->data);
+                pre->left = cur;
+                qtree.enqueue(ptr);
+                qbinary.enqueue(cur);
+                pre = cur;
+                while (ptr->next != nullptr)
+                {
+                    ptr = ptr->next;
+                    cur = new BTNode<T>(ptr->data);
+                    pre->right = cur;
+                    pre = cur;
+                    qtree.enqueue(ptr);
+                    qbinary.enqueue(cur);
+                }
+            }
+        }
+        return head;
     }
 };
 
 template <typename T>
 class Forest
 {
-private:
+public:
     TreeNode<T>* trees;
     size_t size;
-public:
     Forest(size_t inputSize)
     {
         size = inputSize;
@@ -327,8 +360,14 @@ public:
     {
         if (trees != nullptr) delete[] trees; trees = nullptr;
     }
-    BTNode<T>* turnBinaryTree()
+    static BTNode<T>* turnBinaryTree(Forest<T>* forest)
     {
+        size_t size = forest->size;
+        BTNode<T>* bts[size];
+        for (int i = 0; i < size; i++)
+        {
+            bts[i] = TreeNode<T>::turnBinaryTree(&forest->trees[i]);
+        }
         //TODO
         return nullptr;
     }
