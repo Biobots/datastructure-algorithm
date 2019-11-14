@@ -5,25 +5,15 @@ public:
         if (size == 2) return min(height[0], height[1]);
         int lo = 0;
         int hi = size - 1;
-        bool lomin = height[lo] < height[hi] ? true : false;
-        int min = lomin ? height[lo] : height[hi];
-        int area = min * (hi - lo);
+        bool lomin;
+        int min = 0;
+        int area = 0;
         while (lo < hi)
         {
-            if (lomin)
-            {
-                lo++;
-                lomin = height[lo] < height[hi] ? true : false;
-                min = lomin ? height[lo] : height[hi];
-                area = min * (hi - lo) > area ? min * (hi - lo) : area;
-            }
-            else
-            {
-                hi--;
-                lomin = height[lo] < height[hi] ? true : false;
-                min = lomin ? height[lo] : height[hi];
-                area = min * (hi - lo) > area ? min * (hi - lo) : area;
-            }
+            lomin = height[lo] < height[hi] ? true : false;
+            min = lomin ? height[lo] : height[hi];
+            area = min * (hi - lo) > area ? min * (hi - lo) : area;
+            lomin ? lo++ : hi--;
         }
         return area;
     }
