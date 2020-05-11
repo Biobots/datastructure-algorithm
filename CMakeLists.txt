@@ -2,8 +2,10 @@ cmake_minimum_required (VERSION 2.6)
 
 project(ds)
 
+include_directories(external)
 include_directories(ds)
 include_directories(algo)
+include_directories(pattern)
 #aux_source_directory(test DIR_SRCS)
 
 add_executable(stack test/stacktest.cpp)
