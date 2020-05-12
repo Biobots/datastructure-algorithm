@@ -2,6 +2,7 @@
 #define COMMON_H
 
 #include <iostream>
+#include <rxcpp/rx.hpp>
 
 #ifndef __SIZE_T
 #define __SIZE_T

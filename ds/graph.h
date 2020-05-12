@@ -2,6 +2,7 @@
 #define GRAPH_H
 
 #include <common.h>
+#include <stateMachine.h>
 
 template <typename T, typename U=int>
 class MatrixGraph
