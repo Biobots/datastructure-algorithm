@@ -1,39 +1,38 @@
 class Solution {
 public:
-    vector<vector<int>> threeSum(vector<int>& nums) {
-        vector<vector<int>> rst;
+    int threeSumClosest(vector<int>& nums, int target) {
         int len = nums.size();
-        if(len<3) return rst;
         quicksort(nums,0,len-1);
-        if(nums[0]>0) return rst;
         int i = 0;
+        int offset = nums[0] + nums[1] + nums[2] - target;
+        int abs = absf(offset);
         while(i<len)
         {
-            int lo = i+1; int hi =len-1;
+            int lo = i+1; int hi = len-1;
             while(hi>lo)
             {
-                int tmp = nums[i]+nums[lo]+nums[hi];
-                if(tmp==0)
+                int tmp = nums[i] + nums[lo] + nums[hi];
+                if(tmp==target) return target;
+                else if(tmp>target)
                 {
-                    rst.push_back({nums[i], nums[lo], nums[hi]});
-                    while(hi>lo+1 && nums[lo+1]==nums[lo]) lo++;
-                    while(hi-1>lo && nums[hi-1]==nums[hi]) hi--;
-                    hi--;
-                    lo++;
-                }
-                else if(tmp>0)
-                {
+                    int o = tmp - target;
+                    if(absf(o)<abs) {offset = o; abs = absf(o);}
                     hi--;
                 }
-                else if(tmp<0)
+                else if(tmp<target)
                 {
+                    int o = tmp - target;
+                    if(absf(o)<abs) {offset = o; abs = absf(o);}
                     lo++;
                 }
             }
-            while(i<len-1 && nums[i+1]==nums[i]) i++;
             i++;
         }
-        return rst;
+        return target+offset;
+    }
+    int absf(int a)
+    {
+        return a > 0 ? a : -a;
     }
     void quicksort(vector<int>& nums, int l, int h)
     {
